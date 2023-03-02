@@ -39,6 +39,6 @@ streamlit.header("The Fruit Load List contains:")
 df = streamlit.dataframe(my_data_rows)
 
 fruit_add = streamlit.text_input('What fruit would you like to add?')
-df = df.append({'FRUIT_NAME': fruit_add}, ignore_index=True)
+#df2 = df.append({'FRUIT_NAME': fruit_add}, ignore_index=True)
 streamlit.text(f'Thanks for adding {fruit_add}')
 
