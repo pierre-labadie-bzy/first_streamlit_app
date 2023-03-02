@@ -36,8 +36,9 @@ my_cur = my_cnx.cursor()
 my_cur.execute("select * from pc_rivery_db.public.fruit_load_list")
 my_data_rows = my_cur.fetchall()
 streamlit.header("The Fruit Load List contains:")
-streamlit.dataframe(my_data_rows)
+df = streamlit.dataframe(my_data_rows)
 
 fruit_add = streamlit.text_input('What fruit would you like to add?')
+df = df.append({'FRUIT_NAME': fruit_add}, ignore_index=True)
 streamlit.text(f'Thanks for adding {fruit_add}')
 
